@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="./style.css">
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+>
+</head>
+<body>
+    <header id="header">
+            <aside class="sidebar" id="sidebar">
+                <div class="sidebar_header">
+               <button id="menuBtn"> <i class="fa-solid fa-bars"></i> </button>
+                <h3 id="menu">Menu</h3>
+                </div>
+                <nav>
+                    <ul>
+                        <li> <a href="#"> <i class="fa-solid fa-house"></i>   <span>Dashboard</span></a> </li>
+                        <li> <a href="#"> <i class="fa-solid fa-box"></i>  <span>Products</span></a></li>
+                        <li> <a href="#"> <i class="fa-solid fa-layer-group"></i><span>Categories</span></a></li>
+                        <li> <a href="#"><i class="fa-solid fa-chart-column"></i>  <span>Reports</span></a></li>
+                        <li> <a href="#"><i class="fa-solid fa-gear"></i><span>Settings</span></a></li>
+                    </ul>
+                </nav>
+            </aside>
+            <main class="main_content">
+            <div class="page_header">
+                 <h1>Welcome Back !</h1>
+                 <p>Manage your Inventory</p>
+            </div>
+            <section class="summary">
+    <div class="cards">
+        <p>Total Products</p>
+    </div>
+
+     <div class="cards">
+        <p>Total Stock</p>
+    </div>
+
+     <div class="cards">
+        <p>Low Stock</p>
+    </div>
+
+     <div class="cards">
+        <p>Total value</p>
+    </div>
+
+ </div>
+   </section>
+    
+   <section id="hero">
+    <h4>Add New Iteam </h4>
+    
+    <div class="cards_large">
+        <div id="add_items">
+      <div class="inputs"> <label> Product Name</label> <input type="text" placeholder="Enter the Product Name"></div> 
+      <div class="inputs"> <label> Categories</label> <select id="Categories">
+        <option >Choose</option>
+        <option value="200g Packet">200g Packet</option>
+         <option value="100g Packet">100g Packet</option>
+          <option value="Box">Box</option>
+           <option value="Board">Board</option>
+      </select></div> 
+      <div class="inputs"> <label> Price</label> <input type="text" placeholder="Enter the Price"></div> 
+      <div class="inputs"> <label> Quantity</label> <input type="text" placeholder="Enter the Quantity"></div> 
+        </div>
+   </section>
+
+            </main>
+    </header>
+
+
+   
+
+    <script src="./script.js"></script>
+</body>
+</html>
