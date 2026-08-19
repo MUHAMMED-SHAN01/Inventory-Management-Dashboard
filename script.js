@@ -92,9 +92,76 @@ if (productList){
 
 
     });
+       
+    // delete object in array
+
+       const deleteBtn = document.querySelectorAll(".delBtn");
+       deleteBtn.forEach((button)=>{
+        button.addEventListener("click",()=>{
+            const index= button.dataset.index;
+            products.splice(index,1);
+            localStorage.setItem("inventoryData",JSON.stringify(products));
+            location.reload();
+        });
+       });
+    
+
 }
 
 
- 
 
+
+// categories
+
+
+const categoryList=document.getElementById("categoryList");
+
+if(categoryList){
+     
+    // make other object save categories
+    const categoryCount ={};
+    products.forEach((product)=>{
+        if(categoryCount[product.category]){
+            categoryCount[product.category]++;
+        }
+
+        else{
+            categoryCount[product.category]=1; 
+        }
+    }
+);
+
+
+Object.keys(categoryCount).forEach((category)=>{
+    const card=document.createElement("div");
+    card.classList.add("category_cards");
+    card.innerHTML=`<h3>${category}</h3>
+    <p>${categoryCount[category]}Products</p>`;
+    categoryList.appendChild(card);
+});
+}
+
+// dashboard stocks detailed
+
+const totalProducts=document.getElementById("totalProducts");
+const totalStock=document.getElementById("totalStock");
+const lowStock=document.getElementById("lowStock");
+
+if(totalProducts){
+    totalProducts.textContent=products.length;
+}
+ 
+if(totalStock){
+    const stock= products.reduce((total,product)=>{
+        return total+Number(product.quantity);
+    }, 0);
+    totalStock.textContent=stock;
+}
+
+if(lowStock){
+    const low = products.filter((product)=>{
+        return Number(product.quantity)<= 5;
+    });
+    lowStock.textContent=low.length;
+}
 
