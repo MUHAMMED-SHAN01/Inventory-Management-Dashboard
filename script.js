@@ -12,8 +12,11 @@ menuBtn.addEventListener("click", () => {
 
 
 // from validation and add 
+// retrive localstorage array 
 
-products=[]; 
+const products=JSON.parse(localStorage.getItem("inventoryData")) || []; 
+console.log(products);
+
 const from=document.querySelector('#productFrom');
 const AddBtn=document.getElementById('addBtn');
 // console.log(AddBtn);
@@ -26,7 +29,19 @@ const Price=document.getElementById('Price');
 const Quantity=document.getElementById('Quantity');
 // console.log(Quantity);
 
+
+
 AddBtn.addEventListener("click", () => {
+
+    // check all inputs
+
+    if(  ProductName.value ==="" || Categories.value === "" || Price.value === "" || Quantity.value ==="" ){
+        alert("Please fill all fields");
+       
+    }
+    
+    else  {
+
 
     // create object
    const product ={
@@ -40,11 +55,22 @@ AddBtn.addEventListener("click", () => {
     // push array
     
     products.push(product);
+
+
+    // store in localstorage
+    localStorage.setItem("inventoryData",JSON.stringify(products));
   
    console.log(products);
+
+
    from.reset();
+
+}
 
     
 });
+
+
+ 
 
 
