@@ -2,19 +2,25 @@ Inventory Management System
 
 A responsive web-based Inventory Management System built using HTML, CSS, and JavaScript. The application allows users to add, view, categorize, and delete products while storing product data in the browser using Local Storage.
 
+🌐 Live Demo
+
+"Open the Live Inventory Management System" (https://inventory-management-system-sable-nu.vercel.app/)
+
+The project is deployed using Vercel and can be opened directly in a web browser.
+
 🚀 Features
 
 - Add new products
 - Validate product form fields
-- Store products using Local Storage
+- Store product data using Local Storage
 - Display saved products
 - Delete products
-- View total number of products
+- Calculate total number of products
 - Calculate total stock quantity
 - Identify low-stock products
 - Display product categories and product counts
-- Separate Dashboard, Products, and Categories pages
-- Responsive design for different screen sizes
+- Dashboard for inventory overview
+- Responsive design for desktop, tablet, and mobile
 - Data remains available after page refresh
 
 🛠️ Technologies Used
@@ -39,14 +45,14 @@ Inventory-Management-System/
 
 Adding Products
 
-The user enters:
+Users can enter:
 
 - Product name
 - Category
 - Price
 - Quantity
 
-JavaScript creates a product object and adds it to the products array.
+JavaScript creates an object for each product and adds it to the products array.
 
 const product = {
     name: ProductName.value,
@@ -55,13 +61,13 @@ const product = {
     quantity: Quantity.value
 };
 
-The product is then added to the array:
-
 products.push(product);
 
-Local Storage
+💾 Local Storage
 
-The products array is converted into a JSON string before being saved:
+Product data is stored in the browser using Local Storage.
+
+Before saving, the JavaScript array is converted into a JSON string:
 
 localStorage.setItem(
     "inventoryData",
@@ -73,67 +79,80 @@ When the application loads, the saved data is retrieved and converted back into 
 const products =
     JSON.parse(localStorage.getItem("inventoryData")) || [];
 
-Dashboard
+This allows the product data to remain available even after refreshing the page.
 
-The dashboard provides an overview of the inventory:
+📊 Dashboard
+
+The Dashboard provides an overview of the inventory, including:
 
 - Total Products
 - Total Stock
 - Low Stock Products
 
-JavaScript uses array methods such as "reduce()" and "filter()" to calculate these values.
+"reduce()" is used to calculate total stock, while "filter()" is used to find products with low stock.
 
-Products
+📦 Products
 
-The Products page displays the saved products and allows the user to:
+The Products page displays saved products and allows users to:
 
-- View product details
+- View product information
 - Delete products
 
-Categories
+🏷️ Categories
 
-The Categories page displays the available product categories and the number of products belonging to each category.
+The Categories page displays product categories and the number of products belonging to each category.
 
 📱 Responsive Design
 
-The application is designed to work across different screen sizes, including:
+The application is designed to work on different screen sizes, including:
 
 - Desktop
 - Tablet
 - Mobile
 
-CSS media queries are used to adjust the layout and components for smaller screens.
+CSS media queries are used to adjust the layout for smaller screens.
 
-▶️ How to Run
+▶️ How to Open
 
-1. Clone or download this repository.
-2. Open the project folder.
-3. Open "index.html" in a web browser.
+Option 1 — Live Demo
 
-No backend or database is required because the application uses browser Local Storage.
+Open the deployed application:
 
-🎯 Learning Goals
+"Inventory Management System" (https://inventory-management-system-sable-nu.vercel.app/)
 
-This project was built to practice JavaScript fundamentals and DOM manipulation, including:
+Option 2 — Run Locally
 
-- Arrays and objects
-- Functions and arrow functions
+1. Clone the repository.
+2. Open the project folder in VS Code.
+3. Open "index.html" using Live Server or a web browser.
+4. Start adding and managing products.
+
+No backend or database is required because the project uses browser Local Storage.
+
+🎯 JavaScript Concepts Practiced
+
+This project helped practice:
+
+- Variables and constants
+- Arrays
+- Objects
+- Functions
+- Arrow functions
 - DOM manipulation
 - Event listeners
 - Form handling
+- Input validation
 - "forEach()"
 - "filter()"
 - "reduce()"
 - "push()"
 - "splice()"
 - "dataset"
-- JSON
+- "JSON.stringify()"
+- "JSON.parse()"
 - Local Storage
-- Responsive CSS design
 
 🔮 Future Improvements
-
-Possible future improvements include:
 
 - Edit product functionality
 - Product search and sorting
@@ -141,9 +160,10 @@ Possible future improvements include:
 - REST API
 - User authentication
 - Inventory reports
+- User accounts
 
 👨‍💻 Author
 
 Muhammed Shan
 
-Computer Engineering | Frontend Development
+Computer Engineering | Frontend Developer
